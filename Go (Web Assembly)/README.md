@@ -1,3 +1,40 @@
+##  Directory structure
+
+Go 19 x 19/
+├── src/ # Rust source code
+
+│ ├── lib.rs # WebAssembly bindings
+
+│ ├── game.rs # Game logic
+
+│ └── board.rs # Board state management
+
+├── web/ # Web files
+
+│ ├── index.html # Main HTML file
+
+│ ├── app.js # JavaScript frontend
+
+│ ├── style.css # Styling
+
+│ ├── go_game_bg.wasm # Compiled WebAssembly binary
+
+│ └── wasm_exec.js # WebAssembly JavaScript bindings
+
+├── scripts/ # Build scripts
+
+│ ├── build.bat # Build script (Windows)
+
+│ ├── build.ps1 # Build script (PowerShell)
+
+│ └── build.sh # Build script (Linux/Mac)
+
+├── Cargo.toml # Rust project configuration
+
+├── Cargo.lock # Rust dependency lock file
+
+└── README.md # Project documentation
+
 ## Prerequisites
 
 Before you can run the game, make sure you have the following installed:
@@ -77,41 +114,3 @@ http://localhost:8080/web/index.html
 - Check the browser console for errors (F12)
 
 - Ensure WebAssembly is supported in your browser (all modern browsers support it)
-
-##  Directory structure
-
-Go 19 x 19/
-
-├── src/ # Rust source code
-
-│ ├── lib.rs # WebAssembly bindings
-
-│ ├── game.rs # Game logic
-
-│ └── board.rs # Board state management
-
-├── web/ # Web files
-
-│ ├── index.html # Main HTML file
-
-│ ├── app.js # JavaScript frontend
-
-│ ├── style.css # Styling
-
-│ ├── go_game_bg.wasm # Compiled WebAssembly binary
-
-│ └── wasm_exec.js # WebAssembly JavaScript bindings
-
-├── scripts/ # Build scripts
-
-│ ├── build.bat # Build script (Windows)
-
-│ ├── build.ps1 # Build script (PowerShell)
-
-│ └── build.sh # Build script (Linux/Mac)
-
-├── Cargo.toml # Rust project configuration
-
-├── Cargo.lock # Rust dependency lock file
-
-└── README.md # Project documentation
