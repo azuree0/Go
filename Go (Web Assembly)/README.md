@@ -1,6 +1,7 @@
 ##  Directory structure
 
 Go 19 x 19/
+
 ├── src/ # Rust source code
 
 │ ├── lib.rs # WebAssembly bindings
@@ -114,3 +115,4 @@ http://localhost:8080/web/index.html
 - Check the browser console for errors (F12)
 
 - Ensure WebAssembly is supported in your browser (all modern browsers support it)
+
