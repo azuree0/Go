@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Go (Web Assembly)</h1>
+        <div class="game-info">
+            <div class="player-info">
+                <span>Current Player: </span>
+                <span id="currentPlayer">Black</span>
+            </div>
+            <div class="controls">
+                <button id="newGameBtn">New game</button>
+                <button id="undoBtn">Undo</button>
+                <button id="passBtn">Pass</button>
+            </div>
+        </div>
+        <div id="board-container">
+            <canvas id="goBoard" width="570" height="570"></canvas>
+        </div>
+        <div id="status"></div>
+    </div>
+    <script type="module" src="app.js?v=4"></script>
+</body>
+</html>
+
