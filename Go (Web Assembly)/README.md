@@ -97,22 +97,3 @@ Then open your browser and navigate to:
 ```
 http://localhost:8080/web/index.html
 ```
-
-## Troubleshooting
-
-### "Error loading WebAssembly"
-- Make sure you've run the build script (`scripts/build.bat` or `scripts/build.sh`)
-- Check that `web/go_game_bg.wasm` exists in the web directory
-- Ensure you're accessing the game through a web server, not by opening the file directly
-- Make sure you're serving from the project root and accessing `/web/index.html`
-
-### Build fails
-- Ensure Rust is properly installed: `rustc --version`
-- Try installing `wasm-pack` manually: `cargo install wasm-pack`
-- Make sure you have the `wasm32-unknown-unknown` target: `rustup target add wasm32-unknown-unknown`
-
-### Game doesn't respond to clicks
-- Check the browser console for errors (F12)
-
-- Ensure WebAssembly is supported in your browser (all modern browsers support it)
-
