@@ -1,0 +1,22 @@
+# Rust
+/target
+/pkg
+
+# WebAssembly build directories (but allow web/ artifacts)
+# Ignore build output directories
+pkg/
+target/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Old build artifacts (no longer used)
+main.wasm
