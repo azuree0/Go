@@ -1,0 +1,489 @@
+/* Reset: Remove default margins/padding, use border-box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body: Main page styling with gradient background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Container: Main content wrapper with white background */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Header: Game title styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #667eea;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Info: Player status and controls container */
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Player Info: Current player and captured stones */
+.player-info {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.player-indicator {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#player-name {
+    padding: 5px 15px;
+    border-radius: 5px;
+    background: #2c3e50;
+    color: white;
+}
+
+#player-name.player-black {
+    background: #212529;
+}
+
+#player-name.player-white {
+    background: #f8f9fa;
+    color: #212529;
+    border: 2px solid #212529;
+}
+
+.capture-info {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.capture-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.stone-preview {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.stone-preview.black-stone {
+    background: radial-gradient(circle at 30% 30%, #4a4a4a, #212529);
+    border: 1px solid #000;
+}
+
+.stone-preview.white-stone {
+    background: radial-gradient(circle at 30% 30%, #ffffff, #e0e0e0);
+    border: 1px solid #8b6f47;
+}
+
+/* Controls: Button container */
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+/* Button: Base button styling */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #7f8a94;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+#pass-btn {
+    background: #e1e3ed;
+    color: #333;
+}
+
+#pass-btn:hover {
+    background: #A8A8A8;
+}
+
+/* Board: 19x19 Go board with wooden texture */
+.board {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto 10px auto;
+    max-width: 900px;
+    padding: 20px;
+    background: linear-gradient(
+        90deg,
+        #d4a574 0%,
+        #c9a068 25%,
+        #d4a574 50%,
+        #c9a068 75%,
+        #d4a574 100%
+    );
+    background-size: 200% 100%;
+    border-radius: 10px;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        0 12px 24px rgba(0, 0, 0, 0.3);
+    border: 4px solid #8b6f47;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+/* Board Texture: Wood grain pattern overlay */
+.board::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 111, 71, 0.1) 2px,
+            rgba(139, 111, 71, 0.1) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 20px,
+            rgba(139, 111, 71, 0.05) 20px,
+            rgba(139, 111, 71, 0.05) 40px
+        );
+    pointer-events: none;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+/* Board Gloss: Shine/gloss effect overlay */
+.board::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.31) 0%,
+            rgba(255, 255, 255, 0.20) 20%,
+            rgba(255, 255, 255, 0.10) 40%,
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.41) 0%,
+            rgba(255, 255, 255, 0.11) 30%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.11) 70%,
+            rgba(255, 255, 255, 0.31) 100%
+        );
+    pointer-events: none;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.board-labels {
+    display: grid;
+    grid-template-columns: 30px repeat(19, 1fr) 30px;
+    gap: 0;
+    padding: 0;
+    height: 25px;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.top-labels {
+    margin-bottom: 0;
+}
+
+.bottom-labels {
+    margin-top: 0;
+}
+
+.board-row {
+    display: grid;
+    grid-template-columns: 30px repeat(19, 1fr) 30px;
+    gap: 0;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.board-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #8b6f47;
+    user-select: none;
+}
+
+.row-label {
+    color: #8b6f47;
+    font-size: 0.9em;
+}
+
+/* Intersection: Individual board position (clickable) */
+.intersection {
+    aspect-ratio: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    overflow: visible;
+}
+
+/* Grid Lines: Horizontal line for each intersection */
+.intersection::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #7e6144;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+/* Grid Lines: Vertical line for each intersection */
+.intersection::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: #8b6f47;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Grid Border: Hide grid lines at edges to create clean border */
+
+/* Top Edge: Half-height vertical lines */
+.intersection[data-row="0"]::after {
+    top: 50%;
+    height: 50%;
+}
+
+/* Bottom Edge: Half-height vertical lines */
+.intersection[data-row="18"]::after {
+    top: 0;
+    height: 50%;
+}
+
+/* Left Edge: Half-width horizontal lines */
+.intersection[data-col="0"]::before {
+    left: 50%;
+    width: 50%;
+}
+
+/* Right Edge: Half-width horizontal lines */
+.intersection[data-col="18"]::before {
+    left: 0;
+    width: 50%;
+}
+
+/* Star Points: Hoshi markers on the board */
+.star-point {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #866547;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.intersection:hover {
+    transform: scale(1.1);
+}
+
+/* Custom Cursor: Black stone cursor */
+.board.cursor-black .intersection {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="20" cy="20" r="15" fill="%23212529" stroke="%23000" stroke-width="0.5"/><circle cx="15" cy="15" r="3" fill="%234a4a4a" opacity="0.6"/></svg>') 20 20, auto;
+}
+
+/* Custom Cursor: White stone cursor */
+.board.cursor-white .intersection {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="20" cy="20" r="15" fill="%23f8f9fa" stroke="%238b6f47" stroke-width="0.5"/><circle cx="15" cy="15" r="3" fill="%23ffffff" opacity="0.8"/></svg>') 20 20, auto;
+}
+
+/* Stones: Black and white stone styling */
+.black-stone,
+.white-stone {
+    position: relative;
+    z-index: 4;
+}
+
+/* Stone Placed: 3D stone rendering with gradients */
+/* Use more specific selector to override border grid line rules */
+.intersection.black-stone::before,
+.intersection.white-stone::before {
+    content: '';
+    position: absolute;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 4;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.intersection.black-stone::before {
+    background: radial-gradient(circle at 30% 30%, #4a4a4a, #212529);
+    border: 1px solid #000;
+}
+
+.intersection.white-stone::before {
+    background: radial-gradient(circle at 30% 30%, #ffffff, #e0e0e0);
+    border: 1px solid #8b6f47;
+}
+
+
+/* Status: Game status message display */
+.status {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+    min-height: 30px;
+    color: #667eea;
+}
+
+/* Responsive: Tablet and smaller screens */
+@media (max-width: 1024px) {
+    .board {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .board-labels,
+    .board-row {
+        grid-template-columns: 25px repeat(19, 1fr) 25px;
+    }
+    
+    .board-label {
+        font-size: 0.75em;
+    }
+    
+    .intersection.black-stone::before,
+    .intersection.white-stone::before {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+
+/* Responsive: Mobile screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .player-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .board {
+        padding: 5px;
+    }
+    
+    .board-labels,
+    .board-row {
+        grid-template-columns: 20px repeat(19, 1fr) 20px;
+    }
+    
+    .board-label {
+        font-size: 0.65em;
+    }
+    
+    .intersection.black-stone::before,
+    .intersection.white-stone::before {
+        width: 22px !important;
+        height: 22px !important;
+    }
+}

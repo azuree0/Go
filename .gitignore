@@ -1,0 +1,32 @@
+# Rust build artifacts
+/target/
+Cargo.lock
+
+# WASM build output (can be regenerated)
+/pkg/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug logs
+.cursor/debug.log
+
+# Environment
+.env
+.env.local
+

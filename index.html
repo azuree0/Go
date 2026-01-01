@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Go</h1>
+        </header>
+        
+        <div class="game-info">
+            <div class="player-info">
+                <div id="current-player" class="player-indicator">
+                    <span>Current</span>
+                    <span id="player-name">Black</span>
+                </div>
+                <div class="capture-info">
+                    <div class="capture-item">
+                        <span class="stone-preview black-stone"></span>
+                        <span>Captured: <span id="black-captured">0</span></span>
+                    </div>
+                    <div class="capture-item">
+                        <span class="stone-preview white-stone"></span>
+                        <span>Captured: <span id="white-captured">0</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="pass-btn" class="btn btn-secondary">Pass</button>
+                <button id="reset-btn" class="btn btn-secondary">New Game</button>
+            </div>
+        </div>
+        
+        <div id="game-board" class="board"></div>
+        
+        <div id="status" class="status"></div>
+    
+    <script type="module" src="index.js"></script>
+</body>
+</html>
