@@ -46,12 +46,12 @@ http://localhost:8000
    - Once placed, stones cannot be moved (except when captured).
 
 2. **Groups and Ki**
-   - Stones of the same color that are connected horizontally or vertically form a **group**.
+   - Stones of the same color that are connected horizontally or vertically form a group.
    - **Ki** are empty intersections adjacent to a group (horizontally or vertically).
    - A group must have at least one liberty to remain on the board.
 
 3. **Capture**
-   - When a group has no ki, it is **captured** and removed from the board.
+   - When a group has no ki, it is captured and removed from the board.
    - Captured stones are counted and displayed in the game interface.
    - You can capture multiple groups in a single move.
 
