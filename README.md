@@ -98,11 +98,11 @@ http://localhost:8000
 ### Three Sovereigns and Five Emperors (c. 2852-2070 BCE)
 - **Legendary Origin**: According to Chinese legend, Go (Weiqi 圍棋) was invented by Emperor Yao (堯, c. 2356-2255 BCE), one of the Five Emperors, as a way to teach strategic thinking and wisdom to his son Danzhu.
 - **Mythological Significance**: The game's creation is attributed to this legendary period of Chinese prehistory, representing the transmission of knowledge and the cultivation of virtue.
-- **Taoist Foundation**: Even in legend, the game embodies early Taoist principles of balance, natural order, and the harmony between opposing forces.
+
 
 ### Xia Dynasty (c. 2070-1600 BCE)
 - **Early Development**: During China's first recorded dynasty, Go continued to develop as a strategic and philosophical tool.
-- **Cultural Integration**: The game became associated with rulership and governance, used to teach principles of balance and strategic thinking to rulers and officials.
+- **Cultural Integration**: The game became associated with rulership and governance, as principles of balance and strategic thinking to rulers and officials.
 
 ### Shang Dynasty (c. 1600-1046 BCE)
 - **Archaeological Evidence**: While direct evidence is limited, the game's principles align with the strategic thinking evident in Shang military and political organization.
