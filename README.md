@@ -38,7 +38,7 @@ http://localhost:8000
 
 1. **Place a Stone**: Click on an empty intersection to place your stone (black or white).
 2. **Capture**: When you place a stone that removes all liberties (adjacent empty spaces) from an opponent's group, those stones are captured and removed from the board.
-3. **End Turn**: After placing a stone, the turn automatically passes to the opponent.
+3. **End Turn**: After placing a stone, turn automatically passes to the opponent.
 
 1. **Placement**
    - Players take turns placing stones on empty intersections.
