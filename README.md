@@ -147,16 +147,16 @@ The board design reflects Taoist cosmological & theological symbolism:
 
 <br>
 
-# Structure
+# Structure 
 
 ```
 .
-├── Cargo.toml          # Rust project configuration
+├── Cargo.toml          # Rust project configuration (Backend)
 ├── src/
-│   └── lib.rs          # Main game logic (Rust/WASM) - Backend
-├── index.html          # Web interface - Frontend
-├── style.css           # Styling - Frontend
-├── index.js            # JavaScript bindings and UI logic - Backend
+│   └── lib.rs          # Main game logic (Rust/WASM) (Backend)
+├── index.html          # Web interface (Frontend)
+├── style.css           # Styling (Frontend)
+├── index.js            # JavaScript bindings and UI logic (Frontend)
 ├── build.bat           # Windows build script
 ├── watch-build.bat     # Auto-rebuild script (Windows batch)
 ├── watch-build.ps1     # Auto-rebuild script (PowerShell)
