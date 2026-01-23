@@ -2,7 +2,7 @@
 
 <br>
 
-# Prerequisites
+# WebAssembly
 
 - Rust (latest stable version)
 wasm-pack, install with: 
