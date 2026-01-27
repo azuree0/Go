@@ -10,14 +10,14 @@ wasm-pack, install with:
 cargo install wasm-pack
 ```
 
-### Build Steps
+### Build 
 
-1. Build the WebAssembly module:
+1. Build the module:
 ```bash
 wasm-pack build --target web
 ```
 
-2. Serve the files with a local web server (required for WebAssembly):
+2. Local web server:
 ```bash
 python -m http.server 8000
 ```
@@ -151,16 +151,22 @@ The board design reflects Taoist cosmological & theological symbolism:
 
 ```
 .
-├── Cargo.toml          # Rust project configuration (Backend)
+├── Cargo.toml               # Rust project configuration       (Backend)  (Config)
+├── build.bat                # Windows build script             (Build)    (Script)
+├── watch-build.bat          # Auto-rebuild script (Windows)    (Build)    (Script)
+├── watch-build.ps1          # Auto-rebuild script (PowerShell) (Build)    (Script)
+├── server.py                # Local web server for development (Build)    (Script)
+├── index.html               # HTML entry point                 (Frontend) (Static /  Markup)
+├── index.js                 # Vanilla JavaScript game logic    (Frontend) (Source /  Script)
+├── style.css                # Global styles                    (Frontend) (Static /  Styles)
 ├── src/
-│   └── lib.rs          # Main game logic (Rust/WASM) (Backend)
-├── index.html          # Web interface (Frontend)
-├── style.css           # Styling (Frontend)
-├── index.js            # JavaScript bindings and UI logic (Frontend)
-├── build.bat           # Windows build script
-├── watch-build.bat     # Auto-rebuild script (Windows batch)
-├── watch-build.ps1     # Auto-rebuild script (PowerShell)
-├── server.py           # Local web server for development
-├── .gitignore          # Git ignore rules
-└── README.md           # This file
+│   └── lib.rs               # Rust game logic (WebAssembly)    (Backend)  (Source /  Library)
+├── pkg/                     # wasm-pack generated              (Backend)
+│   ├── go_game.js           # WASM bindings                    (Backend)  (Source /  Module)
+│   ├── go_game_bg.wasm      # Compiled WebAssembly             (Backend)  (Source /  Library)
+│   ├── go_game.d.ts         # TypeScript definitions           (Backend)  (Source /  Module)
+│   ├── go_game_bg.wasm.d.ts # WASM TypeScript definitions      (Backend)  (Source /  Module)
+│   ├── package.json         # WASM package metadata            (Backend)  (Config)
+│   └── README.md            # WASM package documentation       (Backend)  (Static /  Documentation)
+└── README.md                # This file
 ```
